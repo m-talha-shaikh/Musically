@@ -36,3 +36,16 @@ mixer.addEventListener('click', ()=>{
 	}
 })
 
+mixer.addEventListener('pointerup', ()=>{
+	if(mixState === true){
+		mixState = false;
+		mix = false;
+		mixer.style.backgroundColor = 'lavender';
+	}
+	else{
+		mixState = true;
+		mix = true;
+		mixer.style.backgroundColor = 'lightblue';
+	}
+})
+
