@@ -18,8 +18,13 @@ let playSound = (event, box)=>{
 }
 
 for(let i = 0; i < 10 ; i++){
-	instrunments[i].addEventListener('click', playSound);
-	instrunments[i].addEventListener('pointerup', playSound);
+	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+ 		instrunments[i].addEventListener('pointerup', playSound);
+	}else{
+ 		instrunments[i].addEventListener('click', playSound);
+	}
+	
+	
 }
 let mixMusic = ()=>{
 	if(mixState === true){
