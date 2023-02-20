@@ -21,31 +21,27 @@ for(let i = 0; i < 10 ; i++){
 	instrunments[i].addEventListener('click', playSound);
 	instrunments[i].addEventListener('pointerup', playSound);
 }
+let mixMusic = ()=>{
+	if(mixState === true){
+		mixState = false;
+		mix = false;
+		mixer.style.backgroundColor = 'lavender';
+	}
+	else{
+		mixState = true;
+		mix = true;
+		mixer.style.backgroundColor = 'lightblue';
+	}
+}
+
 
 let mixer = document.getElementById('mix');
-mixer.addEventListener('click', ()=>{
-	if(mixState === true){
-		mixState = false;
-		mix = false;
-		mixer.style.backgroundColor = 'lavender';
-	}
-	else{
-		mixState = true;
-		mix = true;
-		mixer.style.backgroundColor = 'lightblue';
-	}
-})
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  mixer.addEventListener('pointerup', mixMusic);
+}else{
+  mixer.addEventListener('click', mixMusic);
+}
 
-mixer.addEventListener('pointerup', ()=>{
-	if(mixState === true){
-		mixState = false;
-		mix = false;
-		mixer.style.backgroundColor = 'lavender';
-	}
-	else{
-		mixState = true;
-		mix = true;
-		mixer.style.backgroundColor = 'lightblue';
-	}
-})
+
+
 
