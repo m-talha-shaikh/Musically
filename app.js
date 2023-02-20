@@ -3,9 +3,6 @@ let lastSound = null;
 let mixState = false;
 let mix = false;
 
-	console.log(mix)
-	console.log(mixState)
-
 let playSound = (event, box)=>{
 	if(mix === false){
 		if(lastSound != null){
@@ -36,7 +33,5 @@ mixer.addEventListener('click', ()=>{
 		mix = true;
 		mixer.style.backgroundColor = 'lightblue';
 	}
-	console.log(mix)
-	console.log(mixState)
 })
 
