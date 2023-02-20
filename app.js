@@ -19,6 +19,7 @@ let playSound = (event, box)=>{
 
 for(let i = 0; i < 10 ; i++){
 	instrunments[i].addEventListener('click', playSound);
+	instrunments[i].addEventListener('pointerup', playSound);
 }
 
 let mixer = document.getElementById('mix');
